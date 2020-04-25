@@ -72,6 +72,19 @@ import java.util.Collections;
             System.out.println("");
         }
     }
+    public void mostrardorsales(){
+        
+    }
+    public void ordendorsal(){
+        int maxdorsal=0;
+        for(int i=1;i<corredor.size();i++){
+           // System.out.println(" maximo dorsal "+maxdorsal);
+        if(corredor.get(i).getDorsal()>maxdorsal){
+            maxdorsal=corredor.get(i).getDorsal();
+        }
+        }
+        System.out.println(" maximo dorsal "+maxdorsal);
+    }
     public void anotarCorredor(){
         
     }

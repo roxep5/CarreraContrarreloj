@@ -37,7 +37,10 @@ public class CarreraContrarreloj {
                 break;
             case 3:
                cordorti.llegadaCorredor();
-                
+               break;
+            case 7:
+               cordorti.ordendorsal();
+               break;
         }
     }
     
