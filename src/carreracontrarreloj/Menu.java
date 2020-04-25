@@ -13,8 +13,8 @@ import java.util.Scanner;
  */
 public class Menu {
     static Scanner teclado=new Scanner(System.in);
-    private static int opcion=0;
-    private static void mostrar(){
+    
+    public static void mostrar(){
         System.out.println("Elige una opcion, 99 para salir:");
         System.out.println("--------------------------------");
         System.out.println("");

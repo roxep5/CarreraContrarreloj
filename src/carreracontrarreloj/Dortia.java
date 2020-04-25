@@ -9,11 +9,11 @@ package carreracontrarreloj;
  *
  * @author Piña
  */
-public class Dorti {
+public class Dortia {
     private int dorsal;
     private int tiempo;
 
-    public Dorti(int dorsal, int tiempo) {
+    public Dortia(int dorsal, int tiempo) {
         this.dorsal = dorsal;
         this.tiempo = tiempo;
     }

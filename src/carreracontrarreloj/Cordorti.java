@@ -6,31 +6,34 @@
 package carreracontrarreloj;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 /**
  *
  * @author Piña
  */
-public class Cordorti {
+ public class Cordorti  {
      ArrayList<Corredor> corredor=new ArrayList<Corredor>();
-        ArrayList<Dorti> dorti=new ArrayList<Dorti>();
+        //ArrayList<Dortia> dorti=new ArrayList<Dortia>();
 
-    public Cordorti(ArrayList<Corredor> corredor, ArrayList<Dorti> dorti) {
+    public Cordorti(ArrayList<Corredor> corredor) {
         this.corredor = corredor;
-        this.dorti = dorti;
+        //this.dorti = dorti;
     }
     public Cordorti(){
         
     }
 
     public void ordenar(){
-           ArrayList<Corredor> corredor2=new ArrayList<Corredor>();
-        ArrayList<Dorti> dorti2=new ArrayList<Dorti>();
-         corredor.add(null);
+        Collections.sort(corredor);
+           //ArrayList<Corredor> corredor2=new ArrayList<Corredor>();
+        //ArrayList<Dortia> dorti2=new ArrayList<Dortia>();
+        /* corredor.add(null);
          dorti.add(null);
        int t = dorti.size();
-       for (int i = 1; i < t; i++) {
-           for (int k = t- 1; k >= i; k--) {
+       for (int i = 2; i < t; i++) {
+           for (int k = i- 1; k >= i; k--) {
                if(dorti.get(k).getTiempo() < dorti.get(k-1).getTiempo()){
                    dorti2.set(0, dorti.get(k));
                    corredor.set(0, corredor.get(k));
@@ -40,29 +43,30 @@ public class Cordorti {
                    corredor.set(k-1, corredor.get(0));
                }//fin if
            }// fin 2 for
-       }//fin 1 for
+       }//fin 1 for*/
     }
     public void meterdatos(){
-        corredor.add(new Corredor(7,"Jose","España"));
-        dorti.add(new Dorti(7,300));
-        corredor.add(new Corredor(58,"Manuel","Portugal"));
-        dorti.add(new Dorti(58,350));
-        corredor.add(new Corredor(68,"Paco","Francia"));
-        dorti.add(new Dorti(68,345));
-        corredor.add(new Corredor(9,"JoseMaria","España"));
-        dorti.add(new Dorti(9,250));
-        corredor.add(new Corredor(1,"Pepe","Portugal"));
-        dorti.add(new Dorti(1,325));
-        corredor.add(new Corredor(4,"Fernando","Italia"));
-        dorti.add(new Dorti(4,256));
+        corredor.add(new Corredor(7,"Jose","España","Equipo1",300));
+        //dorti.add(new Dortia(7,300));
+        corredor.add(new Corredor(58,"Manuel","Portugal","Equipo1",500));
+        //dorti.add(new Dortia(58,350));
+        corredor.add(new Corredor(68,"Paco","Francia","Equipo1",250));
+        //dorti.add(new Dortia(68,345));
+        corredor.add(new Corredor(9,"JoseMaria","España","Equipo1",325));
+        //dorti.add(new Dortia(9,250));
+        corredor.add(new Corredor(1,"Pepe","Portugal","Equipo1",200));
+       // dorti.add(new Dortia(1,325));
+        corredor.add(new Corredor(4,"Fernando","Italia","Equipo1",499));
+        //dorti.add(new Dortia(4,256));
     }
     public void mostrarclasificacion(){
-        for(int i=0;i<dorti.size();i++){
+        for(int i=0;i<corredor.size();i++){
             System.out.println("posicion "+i);
-            System.out.println("dorsal dorti:"+dorti.get(i).getDorsal());
+            //System.out.println("dorsal dorti:"+dorti.get(i).getDorsal());
             System.out.println("dorsal corredor:"+corredor.get(i).getDorsal());
             System.out.println("nombre: "+corredor.get(i).getNombre());
             System.out.println("Pais :"+corredor.get(i).getNacionalidad());
+            System.out.println("Tiempo: "+corredor.get(i).getTiempo());
             System.out.println("");
             System.out.println("------------------------");
             System.out.println("");
@@ -102,12 +106,9 @@ public class Cordorti {
         this.corredor = corredor;
     }
 
-    public ArrayList<Dorti> getDorti() {
-        return dorti;
-    }
 
-    public void setDorti(ArrayList<Dorti> dorti) {
-        this.dorti = dorti;
-    }
+    
+
+
     
 }

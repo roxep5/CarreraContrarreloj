@@ -9,16 +9,40 @@ package carreracontrarreloj;
  *
  * @author Piña
  */
-public class Corredor {
+public class Corredor implements Comparable<Corredor>{
     private int dorsal;
     private String nombre;
     private String nacionalidad;
+    private int tiempo;
+    private String equipo;
 
     public Corredor(int dorsal, String nombre, String nacionalidad) {
         this.dorsal = dorsal;
         this.nombre = nombre;
         this.nacionalidad = nacionalidad;
     }
+
+    public Corredor(int dorsal, int tiempo) {
+        this.dorsal = dorsal;
+        this.tiempo = tiempo;
+    }
+
+    public int getTiempo() {
+        return tiempo;
+    }
+
+    public void setTiempo(int tiempo) {
+        this.tiempo = tiempo;
+    }
+
+    public String getEquipo() {
+        return equipo;
+    }
+
+    public void setEquipo(String equipo) {
+        this.equipo = equipo;
+    }
+    
     public int getDorsal() {
         return dorsal;
     }
@@ -35,12 +59,25 @@ public class Corredor {
         this.nombre = nombre;
     }
 
+    public Corredor(int dorsal, String nombre, String nacionalidad, String equipo, int tiempo) {
+        this.dorsal = dorsal;
+        this.nombre = nombre;
+        this.nacionalidad = nacionalidad;
+        this.tiempo = tiempo;
+        this.equipo = equipo;
+    }
+
     public String getNacionalidad() {
         return nacionalidad;
     }
 
     public void setNacionalidad(String nacionalidad) {
         this.nacionalidad = nacionalidad;
+    }
+
+    @Override
+    public int compareTo(Corredor o) {
+        return this.tiempo-o.tiempo;
     }
 
     

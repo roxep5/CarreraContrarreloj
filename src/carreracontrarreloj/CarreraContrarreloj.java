@@ -21,13 +21,15 @@ public class CarreraContrarreloj {
         // TODO code application logic here
          Scanner teclado=new Scanner(System.in);
          int opcion=0;
-        opcion=teclado.nextInt();
-        ArrayList<Corredor> corredor=new ArrayList<Corredor>();
-        ArrayList<Dorti> dorti=new ArrayList<Dorti>();
+        
+       // ArrayList<Corredor> corredor=new ArrayList<Corredor>();
+ 
         Cordorti cordorti=new Cordorti();
         Menu menu=new Menu();
-        //cordorti.ordenar();
+        Menu.mostrar();
+        opcion=teclado.nextInt();
         cordorti.meterdatos();
+        cordorti.ordenar();
         switch(opcion){
             case 1:
                 cordorti.mostrarclasificacion();
