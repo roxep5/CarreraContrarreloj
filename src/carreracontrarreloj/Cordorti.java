@@ -15,6 +15,8 @@ import java.util.Collections;
  */
  public class Cordorti  {
      ArrayList<Corredor> corredor=new ArrayList<Corredor>();
+     ArrayList<Corredor> corredorordenadotiempo=new ArrayList<Corredor>();
+     ArrayList<Corredor> corredorordenadodorsal=new ArrayList<Corredor>();
         //ArrayList<Dortia> dorti=new ArrayList<Dortia>();
 
     public Cordorti(ArrayList<Corredor> corredor) {
@@ -26,7 +28,7 @@ import java.util.Collections;
     }
 
     public void ordenar(){
-        Collections.sort(corredor);
+        Collections.sort(corredorordenadotiempo);
            //ArrayList<Corredor> corredor2=new ArrayList<Corredor>();
         //ArrayList<Dortia> dorti2=new ArrayList<Dortia>();
         /* corredor.add(null);
