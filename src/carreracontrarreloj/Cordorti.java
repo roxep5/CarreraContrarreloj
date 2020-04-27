@@ -27,7 +27,8 @@ import java.util.Collections;
         
     }
 
-    public void ordenar(){
+    public void ordenarTiempo(){
+        //esto viene de el compareTo() en la clase corredor. ordena el tiempo
         Collections.sort(corredorordenadotiempo);
            //ArrayList<Corredor> corredor2=new ArrayList<Corredor>();
         //ArrayList<Dortia> dorti2=new ArrayList<Dortia>();
@@ -75,17 +76,49 @@ import java.util.Collections;
         }
     }
     public void mostrardorsales(){
-        
+        for(int i=0;i<corredorordenadodorsal.size();i++){
+            System.out.println("posicion "+i);
+            //System.out.println("dorsal dorti:"+dorti.get(i).getDorsal());
+            System.out.println("dorsal corredor:"+corredorordenadodorsal.get(i).getDorsal());
+            System.out.println("nombre: "+corredorordenadodorsal.get(i).getNombre());
+            System.out.println("Pais :"+corredorordenadodorsal.get(i).getNacionalidad());
+            System.out.println("Tiempo: "+corredorordenadodorsal.get(i).getTiempo());
+            System.out.println("");
+            System.out.println("------------------------");
+            System.out.println("");
+        }
     }
     public void ordendorsal(){
         int maxdorsal=0;
+       
         for(int i=1;i<corredor.size();i++){
            // System.out.println(" maximo dorsal "+maxdorsal);
         if(corredor.get(i).getDorsal()>maxdorsal){
             maxdorsal=corredor.get(i).getDorsal();
         }
+    
         }
         System.out.println(" maximo dorsal "+maxdorsal);
+        int ultimo=0;// para controlar cual fue el ultimo dorsal. lo incializamos a 0 porque no puede haber menos de 1
+        for(int j=0;j<corredor.size();j++){
+
+                corredorordenadodorsal.add(corredor.get(j));
+                
+
+          
+        }
+             for(int i=0;i<(corredor.size()-1);i++){
+      for(int k=0;k<(corredor.size()-1);k++){
+                
+
+        if(corredorordenadodorsal.get(k).getDorsal()>corredorordenadodorsal.get(k+1).getDorsal()){
+                Corredor aux=corredorordenadodorsal.get(k+1);
+                corredorordenadodorsal.set(k+1,corredorordenadodorsal.get(k));
+                corredorordenadodorsal.set(k, aux);
+            }
+ }
+        }
+       
     }
     public void anotarCorredor(){
         

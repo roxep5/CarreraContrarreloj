@@ -29,9 +29,10 @@ public class CarreraContrarreloj {
         Menu.mostrar();
         opcion=teclado.nextInt();
         cordorti.meterdatos();
-        cordorti.ordenar();
+       
         switch(opcion){
             case 1:
+                cordorti.ordenarTiempo();
                 cordorti.mostrarclasificacion();
                 System.out.println("hola");
                 break;
@@ -39,7 +40,9 @@ public class CarreraContrarreloj {
                cordorti.llegadaCorredor();
                break;
             case 7:
+               
                cordorti.ordendorsal();
+               cordorti.mostrardorsales();
                break;
         }
     }

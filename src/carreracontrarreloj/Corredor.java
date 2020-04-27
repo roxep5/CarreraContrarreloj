@@ -76,6 +76,7 @@ public class Corredor implements Comparable<Corredor>{
     }
 
     @Override
+    //esto sirve para ordenar de menor a mayor heredando de comparable corredor luego se usa en collection.sort
     public int compareTo(Corredor o) {
         return this.tiempo-o.tiempo;
     }
