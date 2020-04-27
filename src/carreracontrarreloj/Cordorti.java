@@ -28,25 +28,8 @@ import java.util.Collections;
     }
 
     public void ordenarTiempo(){
-        //esto viene de el compareTo() en la clase corredor. ordena el tiempo
         Collections.sort(corredorordenadotiempo);
-           //ArrayList<Corredor> corredor2=new ArrayList<Corredor>();
-        //ArrayList<Dortia> dorti2=new ArrayList<Dortia>();
-        /* corredor.add(null);
-         dorti.add(null);
-       int t = dorti.size();
-       for (int i = 2; i < t; i++) {
-           for (int k = i- 1; k >= i; k--) {
-               if(dorti.get(k).getTiempo() < dorti.get(k-1).getTiempo()){
-                   dorti2.set(0, dorti.get(k));
-                   corredor.set(0, corredor.get(k));
-                   dorti.set(k, dorti.get(k-1));
-                   corredor.set(k, corredor.get(k-1));
-                   dorti.set(k-1, dorti.get(0));
-                   corredor.set(k-1, corredor.get(0));
-               }//fin if
-           }// fin 2 for
-       }//fin 1 for*/
+           
     }
     public void meterdatos(){
         corredor.add(new Corredor(7,"Jose","España","Equipo1",300));
