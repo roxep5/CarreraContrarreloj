@@ -40,7 +40,7 @@ public class CarreraContrarreloj {
                cordorti.llegadaCorredor();
                break;
             case 7:
-               
+               cordorti.datosenordenadodorsal();
                cordorti.ordendorsal();
                cordorti.mostrardorsales();
                break;

@@ -16,6 +16,13 @@ public class Corredor implements Comparable<Corredor>{
     private int tiempo;
     private String equipo;
 
+    public Corredor(int dorsal, String nombre, String nacionalidad, String equipo) {
+        this.dorsal = dorsal;
+        this.nombre = nombre;
+        this.nacionalidad = nacionalidad;
+        this.equipo = equipo;
+    }
+
     public Corredor(int dorsal, String nombre, String nacionalidad) {
         this.dorsal = dorsal;
         this.nombre = nombre;
