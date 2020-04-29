@@ -35,6 +35,7 @@ import java.util.Scanner;
     }
     public void meterdatos(){
         corredor.add(new Corredor(7,"Jose","España",Equipos[4][0],300));
+        
         corredor.add(new Corredor(58,"Manuel","Portugal",Equipos[0][0],500));
         corredor.add(new Corredor(68,"Paco","Francia",Equipos[3][0],250));
         corredor.add(new Corredor(9,"JoseMaria","España",Equipos[2][0],325));
@@ -120,6 +121,7 @@ import java.util.Scanner;
         int dorsalx=0;
         int i;
         boolean comprobar=false;
+        boolean comprobartiempo=false;//comprueba si tiene tiempoo no
         do{
             System.out.println("Introduzca dorsal por favor,");
         dorsalx=teclado.nextInt();
@@ -127,18 +129,27 @@ import java.util.Scanner;
         corredor.indexOf(dorsalx);
         for(i=0;i<corredor.size();i++){
         if(corredor.get(i).getDorsal()==dorsalx){
-            if(corredor.get(i).getTiempo()!=-1){
-            comprobar=true;
-            break;
+            if(corredor.get(i).getTiempo()==-1){
+                comprobar=true;
+                comprobartiempo=true;
+                break;
+            }else if(corredor.get(i).getTiempo()!=-1){
+                comprobar=true;
+                comprobartiempo=false;
+                break;
             }
             
         }
         
     }
         }while(comprobar==false);
+        if(comprobartiempo){
         System.out.println("Introduzca tiempo por favor,");
         int tiempox=teclado.nextInt();
         corredor.get(i).setTiempo(tiempox);
+        }else if(comprobartiempo==false){
+            System.out.println("esta personas ya llegó");
+        }
     }
     
     

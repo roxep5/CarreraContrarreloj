@@ -39,6 +39,9 @@ public class CarreraContrarreloj {
             case 3:
                cordorti.llegadaCorredor();
                break;
+            case 5:
+                cordorti.mostrarclasificacion();
+                break;
             case 7:
                cordorti.datosenordenadodorsal();
                cordorti.ordendorsal();
