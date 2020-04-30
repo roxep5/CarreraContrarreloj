@@ -19,6 +19,7 @@ import java.util.Scanner;
      private ArrayList<Corredor> corredorordenadotiempo=new ArrayList<Corredor>();
      private ArrayList<Corredor>  corredorordenadodorsal=new ArrayList<Corredor>();
      private String Equipos[][]={{"Force India","FEC"},{"Renault","Ren"},{"camiseta amarilla","cam"},{"celta","Cel"},{"equipo2","e2"}};
+      Scanner teclado=new Scanner(System.in);
         //ArrayList<Dortia> dorti=new ArrayList<Dortia>();
 
     public Cordorti(ArrayList<Corredor> corredor) {
@@ -30,7 +31,7 @@ import java.util.Scanner;
     }
 
     public void ordenarTiempo(){
-        Collections.sort(corredorordenadotiempo);
+        Collections.sort(corredor);
            
     }
     public void meterdatos(){
@@ -40,9 +41,9 @@ import java.util.Scanner;
         corredor.add(new Corredor(68,"Paco","Francia",Equipos[3][0],250));
         corredor.add(new Corredor(9,"JoseMaria","España",Equipos[2][0],325));
         corredor.add(new Corredor(1,"Pepe","Portugal",Equipos[0][0],200));
-        corredor.add(new Corredor(4,"Fernando","Italia",Equipos[0][0],499));
-        corredor.add(new Corredor(6,"Fernando","Italia",Equipos[0][0]));
-        corredor.add(new Corredor(54,"Fernando","Italia",Equipos[0][0]));
+        corredor.add(new Corredor(4,"Fernando","Italia",Equipos[3][0],499));
+        corredor.add(new Corredor(6,"Fernando","Italia",Equipos[2][0]));
+        corredor.add(new Corredor(54,"Fernando","Italia",Equipos[4][0]));
     }
     public void mostrarclasificacion(){
         for(int i=0;i<corredor.size();i++){
@@ -50,6 +51,7 @@ import java.util.Scanner;
             //System.out.println("dorsal dorti:"+dorti.get(i).getDorsal());
             System.out.println("dorsal corredor:"+corredor.get(i).getDorsal());
             System.out.println("nombre: "+corredor.get(i).getNombre());
+            System.out.println("equipo: "+corredor.get(i).getEquipo());
             System.out.println("Pais :"+corredor.get(i).getNacionalidad());
             System.out.println("Tiempo: "+corredor.get(i).getTiempo());
             System.out.println("");
@@ -59,16 +61,20 @@ import java.util.Scanner;
     }
     public void mostrardorsales(){
         for(int i=0;i<corredorordenadodorsal.size();i++){
-            System.out.println("posicion "+i);
+            mostrardorsales2(i);
+        }
+    }
+    public void mostrardorsales2(int i){
+        System.out.println("posicion "+i);
             //System.out.println("dorsal dorti:"+dorti.get(i).getDorsal());
             System.out.println("dorsal corredor:"+corredorordenadodorsal.get(i).getDorsal());
             System.out.println("nombre: "+corredorordenadodorsal.get(i).getNombre());
             System.out.println("Pais :"+corredorordenadodorsal.get(i).getNacionalidad());
             System.out.println("Tiempo: "+corredorordenadodorsal.get(i).getTiempo());
+            System.out.println("Equipo: "+corredorordenadodorsal.get(i).getEquipo());
             System.out.println("");
             System.out.println("------------------------");
             System.out.println("");
-        }
     }
     public void datosenordenadodorsal(){
          
@@ -93,9 +99,7 @@ import java.util.Scanner;
         return maxdorsal;
     }
     public void ordendorsal(){
-        
-       
-        
+
         
         int ultimo=0;// para controlar cual fue el ultimo dorsal. lo incializamos a 0 porque no puede haber menos de 1
         
@@ -116,11 +120,12 @@ import java.util.Scanner;
         
     }
     public void llegadaCorredor(){
-        int maxdorsal=dorsalmaximo();
+        //int maxdorsal=dorsalmaximo();
         Scanner teclado=new Scanner(System.in);
         int dorsalx=0;
         int i;
-        boolean comprobar=false;
+        boolean comprobar=false;//comprueba si esta
+        
         boolean comprobartiempo=false;//comprueba si tiene tiempoo no
         do{
             System.out.println("Introduzca dorsal por favor,");
@@ -151,12 +156,28 @@ import java.util.Scanner;
             System.out.println("esta personas ya llegó");
         }
     }
-    
+    public void mostrarequipos(){
+        for(int i=0;i<Equipos.length;i++){
+            
+                System.out.println(" Equipo "+Equipos[i][0]+" nombre acortado \""+Equipos[i][1]+"\"");
+            
+        }
+    }
+    public void mostrarinfoequipo(){
+        System.out.println("introduzca equipo: ");
+        String equipod=teclado.nextLine();
+        for(int i=0;i<corredor.size();i++){
+            System.out.println("holi");
+            if(equipod.equals(corredor.get(i).getEquipo())){
+               mostrardorsales2(i);
+            } 
+        }
+    }
     
     public ArrayList<Corredor> getCorredor() {
         return corredor;
     }
-
+    
     public void setCorredor(ArrayList<Corredor> corredor) {
         this.corredor = corredor;
     }

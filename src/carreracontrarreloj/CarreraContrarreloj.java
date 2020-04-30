@@ -47,6 +47,12 @@ public class CarreraContrarreloj {
                cordorti.ordendorsal();
                cordorti.mostrardorsales();
                break;
+            case 8:
+                cordorti.mostrarequipos();
+                break;
+            case 9:
+                cordorti.mostrarinfoequipo();
+                break;
         }
     }
     
