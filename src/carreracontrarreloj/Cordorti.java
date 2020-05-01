@@ -45,7 +45,7 @@ import java.util.Scanner;
         corredor.add(new Corredor(6,"Fernando","Italia",Equipos[2][0]));
         corredor.add(new Corredor(54,"Fernando","Italia",Equipos[4][0]));
     }
-    public void mostrarclasificacion(){
+    public void mostrarclasificacion(){//mostramos la clasificacion
         for(int i=0;i<corredor.size();i++){
             System.out.println("posicion "+i);
             //System.out.println("dorsal dorti:"+dorti.get(i).getDorsal());
@@ -77,10 +77,10 @@ import java.util.Scanner;
             System.out.println("");
     }
     public void datosenordenadodorsal(){
-         
+         corredorordenadodorsal.clear();//borramos todos los datos
         for(int j=0;j<corredor.size();j++){
 
-                corredorordenadodorsal.add(corredor.get(j));
+                corredorordenadodorsal.add(corredor.get(j));//ingresamos los datos
                 
 
           
@@ -97,6 +97,25 @@ import java.util.Scanner;
         
     }
         return maxdorsal;
+    }
+    public void mostraruncorredor(){
+       datosenordenadodorsal();
+        int opcion=teclado.nextInt();//pedimos el dorsal:
+        int i;
+        boolean comprobar=false;//comprueba si el dorsal esta en el araylist
+        for(i=0;i<corredor.size();i++){
+            if(corredor.get(i).getDorsal()==opcion){
+                comprobar=true;
+                break;
+            }
+            
+        }
+        if(comprobar){
+            mostrardorsales2(i);
+        }else{
+            System.out.println("Lo sentimos ese drosal no esta asociado a ningun corredor");
+        }
+        
     }
     public void ordendorsal(){
 
@@ -124,7 +143,7 @@ import java.util.Scanner;
         Scanner teclado=new Scanner(System.in);
         int dorsalx=0;
         int i;
-        boolean comprobar=false;//comprueba si esta
+        boolean comprobar=false;//comprueba si esta el numero
         
         boolean comprobartiempo=false;//comprueba si tiene tiempoo no
         do{
@@ -149,8 +168,12 @@ import java.util.Scanner;
     }
         }while(comprobar==false);
         if(comprobartiempo){
-        System.out.println("Introduzca tiempo por favor,");
-        int tiempox=teclado.nextInt();
+        //System.out.println("Introduzca tiempo por favor,");
+        int tiempox;
+        do{
+            System.out.println("Introduzca tiempo por favor,");
+        tiempox=teclado.nextInt();
+        }while(tiempox<0);
         corredor.get(i).setTiempo(tiempox);
         }else if(comprobartiempo==false){
             System.out.println("esta personas ya llegó");
@@ -167,7 +190,6 @@ import java.util.Scanner;
         System.out.println("introduzca equipo: ");
         String equipod=teclado.nextLine();
         for(int i=0;i<corredor.size();i++){
-            System.out.println("holi");
             if(equipod.equals(corredor.get(i).getEquipo())){
                mostrardorsales2(i);
             } 

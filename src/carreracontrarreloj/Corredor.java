@@ -13,10 +13,10 @@ public class Corredor implements Comparable<Corredor>{
     private int dorsal;
     private String nombre;
     private String nacionalidad;
-    private int tiempo=-1;
+    private int tiempo=-1;//para que los que inicializamos sin tiempo tenga -1
     private String equipo;
 
-    public Corredor(int dorsal, String nombre, String nacionalidad, String equipo) {
+    public Corredor(int dorsal, String nombre, String nacionalidad, String equipo) {//para inicializarlo sin tiempo
         this.dorsal = dorsal;
         this.nombre = nombre;
         this.nacionalidad = nacionalidad;

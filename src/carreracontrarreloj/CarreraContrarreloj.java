@@ -25,10 +25,12 @@ public class CarreraContrarreloj {
        // ArrayList<Corredor> corredor=new ArrayList<Corredor>();
  
         Cordorti cordorti=new Cordorti();
+        cordorti.meterdatos();
+        do{
         Menu menu=new Menu();
         Menu.mostrar();
         opcion=teclado.nextInt();
-        cordorti.meterdatos();
+        
        
         switch(opcion){
             case 1:
@@ -40,7 +42,7 @@ public class CarreraContrarreloj {
                cordorti.llegadaCorredor();
                break;
             case 5:
-                cordorti.mostrarclasificacion();
+                cordorti.mostraruncorredor();
                 break;
             case 7:
                cordorti.datosenordenadodorsal();
@@ -54,6 +56,7 @@ public class CarreraContrarreloj {
                 cordorti.mostrarinfoequipo();
                 break;
         }
+        }while(opcion!=99);
     }
     
 }
