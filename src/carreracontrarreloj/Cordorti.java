@@ -100,6 +100,7 @@ import java.util.Scanner;
     }
     public void mostraruncorredor(){
        datosenordenadodorsal();
+       System.out.println("por favor introduzca dorsal");
         int opcion=teclado.nextInt();//pedimos el dorsal:
         int i;
         boolean comprobar=false;//comprueba si el dorsal esta en el araylist
